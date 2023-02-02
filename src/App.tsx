@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{ lazy } from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./component/Home";
+import { StudentRoutes } from './component/student/StudentRoutes';
+import SharedLayout  from './component/SharedLayout';
+const Error = lazy(() => import("./component/Error"));
+const Know = lazy(() => import("./component/Know"));
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path='about' element={<Know />} />
+        </Route>
+          <Route path='/student/*' element={<StudentRoutes />} />
+          <Route path='*' element={<Error />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
