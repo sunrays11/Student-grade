@@ -18,5 +18,3 @@ You will also see any lint errors in the console.
 
 ![Screenshot 2023-02-02 at 1 53 04 PM](https://user-images.githubusercontent.com/120701520/216243053-8a7d0299-de3d-4714-b86a-f29d9594746b.png)
 
-
-https://user-images.githubusercontent.com/120701520/216245076-ce5f6e59-dde6-4132-9b60-aa8f7b1d5f2f.mov
